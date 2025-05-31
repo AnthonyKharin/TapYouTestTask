@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="enter_points_count_title">Введите число точек:</string>
+    <string name="enter_points_count_hint">Количество</string>
+    <string name="continue_button_title">Поехали</string>
+    <string name="not_a_number_error">Введите число</string>
+    <string name="invalid_range_error">Введите число от %1s до %2s</string>
+    <string name="save_as_image_file_text">Сохранить как изображение</string>
+    <string name="cant_save_image_error">К сожалению, сохранение невозможно</string>
+    <string name="use_bezier_title">Использовать сглаживание</string>
+</resources>

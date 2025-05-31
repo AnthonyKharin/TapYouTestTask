@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name" translatable="false">TapYouTestTask</string>
+    <string name="enter_points_count_title">Enter the number of points:</string>
+    <string name="enter_points_count_hint">Count</string>
+    <string name="continue_button_title">Go</string>
+    <string name="not_a_number_error">Not a number</string>
+    <string name="invalid_range_error">Enter number from %1s to %2s</string>
+    <string name="y_coordinate" translatable="false">Y</string>
+    <string name="x_coordinate" translatable="false">X</string>
+    <string name="index_title" translatable="false">N</string>
+    <string name="save_as_image_file_text">Save as image</string>
+    <string name="cant_save_image_error">Unfortunately, saving is not possible</string>
+    <string name="use_bezier_title">Use graph smoothing</string>
+</resources>
