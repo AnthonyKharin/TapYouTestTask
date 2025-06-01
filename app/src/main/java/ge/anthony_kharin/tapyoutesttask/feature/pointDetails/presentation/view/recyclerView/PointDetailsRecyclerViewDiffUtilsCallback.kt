@@ -16,13 +16,13 @@ class PointDetailsRecyclerViewDiffUtilsCallback(
         val oldItem = oldList[oldItemPosition]
         val newItem = newList[newItemPosition]
 
-        return oldItem.javaClass == newItem.javaClass
+        return oldItem.index == newItem.index
     }
 
     override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
         val oldItem = oldList[oldItemPosition]
         val newItem = newList[newItemPosition]
 
-        return oldItem.hashCode() == newItem.hashCode()
+        return oldItem == newItem
     }
 }

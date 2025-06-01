@@ -1,8 +1,8 @@
 package ge.anthony_kharin.tapyoutesttask
 
 import android.app.Application
-import ge.anthony_kharin.tapyoutesttask.di.component.DaggerApplicationComponent
 import ge.anthony_kharin.tapyoutesttask.di.component.ApplicationComponent
+import ge.anthony_kharin.tapyoutesttask.di.component.DaggerApplicationComponent
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob

@@ -6,6 +6,7 @@ import androidx.lifecycle.createSavedStateHandle
 import androidx.lifecycle.viewmodel.CreationExtras
 import ge.anthony_kharin.tapyoutesttask.feature.pointDetails.presentation.mapper.PointDetailsChartItemUiModelMapper
 import ge.anthony_kharin.tapyoutesttask.feature.pointDetails.presentation.mapper.PointDetailsTableItemUiModelMapper
+import ge.anthony_kharin.tapyoutesttask.feature.saveChart.presentation.ChartSaver
 import javax.inject.Inject
 
 class PointDetailsViewModelFactory @Inject constructor(

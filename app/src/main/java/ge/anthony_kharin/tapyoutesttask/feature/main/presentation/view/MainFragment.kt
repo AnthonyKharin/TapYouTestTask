@@ -12,6 +12,7 @@ import ge.anthony_kharin.tapyoutesttask.di.component.ActivityComponent
 import ge.anthony_kharin.tapyoutesttask.feature.main.presentation.model.MainScreenState
 import ge.anthony_kharin.tapyoutesttask.feature.main.presentation.viewModel.MainViewModel
 import ge.anthony_kharin.tapyoutesttask.feature.main.presentation.viewModel.MainViewModelFactory
+import ge.anthony_kharin.tapyoutesttask.feature.utils.setThrottleClickListener
 import javax.inject.Inject
 
 class MainFragment : BaseFragment<FragmentMainBinding>() {
@@ -32,12 +33,11 @@ class MainFragment : BaseFragment<FragmentMainBinding>() {
         // По ТЗ неизвестно когда мы должны делать валидацию введенных символов, поэтому
         // я валидирую при каждом изменении текста
         binding.enterCountEditText.addTextChangedListener(afterTextChanged = { text ->
-            viewModel.onTextChanged(text?.toString().orEmpty())
+            viewModel.onEnterCountEditTextChanged(text?.toString().orEmpty())
         })
 
-        // В реальном проекте я бы позаботился о ThrottleClickListener
-        binding.continueButton.setOnClickListener {
-            viewModel.onGoButtonClicked()
+        binding.continueButton.setThrottleClickListener {
+            viewModel.onContinueButtonClicked()
         }
     }
 
@@ -47,10 +47,18 @@ class MainFragment : BaseFragment<FragmentMainBinding>() {
 
     private fun onEditTextStateReceived(state: MainScreenState) {
         when (state) {
+            is MainScreenState.Initial -> onScreenInitial()
             is MainScreenState.Loaded -> onScreenLoaded(state)
             is MainScreenState.Loading -> onScreenLoading()
             is MainScreenState.Error -> onScreenError(state)
         }
+    }
+
+    private fun onScreenInitial() {
+        binding.enterCountEditText.isEnabled = true
+        binding.enterCountEditText.error = null
+        binding.continueButton.isEnabled = false
+        binding.errorTextView.isVisible = false
     }
 
     private fun onScreenLoaded(state: MainScreenState.Loaded) {

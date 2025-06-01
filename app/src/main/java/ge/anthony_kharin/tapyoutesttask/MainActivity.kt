@@ -14,8 +14,6 @@ import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
-
     val activityComponent by lazy {
         (application as TapYouTestTaskApplication)
             .appComponent
@@ -25,6 +23,7 @@ class MainActivity : AppCompatActivity() {
 
     @Inject
     lateinit var navigatorHolder: NavigatorHolder
+
     @Inject
     lateinit var router: Router
     private val navigator by lazy { AppNavigator(this, R.id.fragmentContainer) }
@@ -33,8 +32,10 @@ class MainActivity : AppCompatActivity() {
         activityComponent.inject(this)
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivityMainBinding.inflate(layoutInflater)
+
+        val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         ViewCompat.setOnApplyWindowInsetsListener(binding.fragmentContainer) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
