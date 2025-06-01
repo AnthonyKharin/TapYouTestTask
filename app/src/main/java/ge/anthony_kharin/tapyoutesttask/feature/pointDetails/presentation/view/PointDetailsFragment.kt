@@ -23,6 +23,7 @@ import ge.anthony_kharin.tapyoutesttask.feature.pointDetails.presentation.view.r
 import ge.anthony_kharin.tapyoutesttask.feature.pointDetails.presentation.view.recyclerView.PointDetailsRecyclerViewAdapter
 import ge.anthony_kharin.tapyoutesttask.feature.pointDetails.presentation.viewModel.PointDetailsViewModel
 import ge.anthony_kharin.tapyoutesttask.feature.pointDetails.presentation.viewModel.PointDetailsViewModelFactory
+import ge.anthony_kharin.tapyoutesttask.feature.utils.setThrottleClickListener
 import ge.anthony_kharin.tapyoutesttask.feature.utils.toList
 import javax.inject.Inject
 
@@ -76,7 +77,7 @@ class PointDetailsFragment : BaseFragment<FragmentPointDetailsBinding>() {
             viewModel.onUseBezierSwitchChecked(isChecked)
         }
         setupLineChart()
-        binding.saveChartImageButton.setOnClickListener {
+        binding.saveChartImageButton.setThrottleClickListener {
             checkPermissionAndSave()
         }
     }

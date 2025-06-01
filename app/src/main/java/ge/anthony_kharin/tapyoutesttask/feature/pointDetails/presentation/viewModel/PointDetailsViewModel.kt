@@ -3,16 +3,15 @@ package ge.anthony_kharin.tapyoutesttask.feature.pointDetails.presentation.viewM
 import android.graphics.Bitmap
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import ge.anthony_kharin.tapyoutesttask.feature.main.domain.models.PointsContainerEntity
 import ge.anthony_kharin.tapyoutesttask.feature.pointDetails.presentation.mapper.PointDetailsChartItemUiModelMapper
 import ge.anthony_kharin.tapyoutesttask.feature.pointDetails.presentation.mapper.PointDetailsTableItemUiModelMapper
 import ge.anthony_kharin.tapyoutesttask.feature.pointDetails.presentation.model.PointDetailsScreenState
 import ge.anthony_kharin.tapyoutesttask.feature.pointDetails.presentation.view.PointDetailsFragment
+import ge.anthony_kharin.tapyoutesttask.feature.saveChart.presentation.ChartSaver
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.launch
 
 class PointDetailsViewModel(
     savedStateHandle: SavedStateHandle,
@@ -38,10 +37,6 @@ class PointDetailsViewModel(
     }
 
     fun saveChart(bitmap: Bitmap) {
-        // Тут можно добавить сообщение об успешном скачивании и пр,
-        // но нужно делать хитрее, чем просто показать тост
-        // Связано это с тем, что сохранение может происходить дольше чем мы находимся на экране
-        // По этой же причине, внутри chartSaver скоуп приложения
-        viewModelScope.launch { chartSaver.saveChart(bitmap) }
+        chartSaver.saveChart(bitmap)
     }
 }

@@ -4,6 +4,8 @@
     <string name="enter_points_count_hint">Count</string>
     <string name="continue_button_title">Go</string>
     <string name="not_a_number_error">Not a number</string>
+    <string name="something_went_wrong_with_count_field_error">Something went wrong, try change count field</string>
+    <string name="something_went_wrong">Something went wrong, try again</string>
     <string name="invalid_range_error">Enter number from %1s to %2s</string>
     <string name="y_coordinate" translatable="false">Y</string>
     <string name="x_coordinate" translatable="false">X</string>
@@ -11,4 +13,8 @@
     <string name="save_as_image_file_text">Save as image</string>
     <string name="cant_save_image_error">Unfortunately, saving is not possible</string>
     <string name="use_bezier_title">Use graph smoothing</string>
+    <string name="cant_start_with_zero_error">Input can\'t start with 0</string>
+    <string name="chart_saving_notification">Chart is saving</string>
+    <string name="chart_saving_error_notification">Chart doesn\'t saved, something went wrong</string>
+    <string name="chart_saved_notification">Chart is saved</string>
 </resources>

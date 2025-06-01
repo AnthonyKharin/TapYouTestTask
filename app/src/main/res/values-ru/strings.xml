@@ -5,7 +5,13 @@
     <string name="continue_button_title">Поехали</string>
     <string name="not_a_number_error">Введите число</string>
     <string name="invalid_range_error">Введите число от %1s до %2s</string>
+    <string name="something_went_wrong_with_count_field_error">Что-то пошло не так, попробуйте изменить поле ввода количества точек</string>
+    <string name="something_went_wrong">Что-то пошло не так, попробуйте еще разn</string>
     <string name="save_as_image_file_text">Сохранить как изображение</string>
     <string name="cant_save_image_error">К сожалению, сохранение невозможно</string>
     <string name="use_bezier_title">Использовать сглаживание</string>
+    <string name="cant_start_with_zero_error">Введенное значение не может начинаться с нуля</string>
+    <string name="chart_saving_notification">График сохраняется</string>
+    <string name="chart_saving_error_notification">График не сохранился, что-то пошло не так</string>
+    <string name="chart_saved_notification">График сохранен</string>
 </resources>

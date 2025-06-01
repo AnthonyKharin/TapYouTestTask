@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import ge.anthony_kharin.tapyoutesttask.databinding.ItemPointBinding
 import ge.anthony_kharin.tapyoutesttask.feature.pointDetails.presentation.model.PointDetailsTableItemUiModel
+import ge.anthony_kharin.tapyoutesttask.feature.utils.setThrottleClickListener
 
 // Сейчас нам не нужен колбэк, но я оставил его для наглядности как я бы это сделал в проекте
 // Однако на самом деле в реальном проекте я бы не использовал такой адаптер в чистом виде
@@ -39,7 +40,7 @@ class PointDetailsRecyclerViewAdapter(
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(point: PointDetailsTableItemUiModel) {
-            binding.root.setOnClickListener { onItemClicked.invoke(point) }
+            binding.root.setThrottleClickListener { onItemClicked.invoke(point) }
             binding.indexTextView.text = point.index
             binding.pointXTextView.text = point.x
             binding.pointYTextView.text = point.y
